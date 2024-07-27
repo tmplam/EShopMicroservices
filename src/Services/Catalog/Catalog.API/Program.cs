@@ -1,12 +1,16 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCarter();
-
+var assembly = typeof(Program).Assembly;
 builder.Services.AddMediatR(config =>
 {
-    config.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    config.RegisterServicesFromAssembly(assembly);
+    config.AddOpenBehavior(typeof(ValidationBehavior<,>));
+    config.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
+builder.Services.AddValidatorsFromAssembly(assembly); // From FluentValidation
+
+builder.Services.AddCarter();
 
 builder.Services.AddMarten(config =>
 {
@@ -14,11 +18,20 @@ builder.Services.AddMarten(config =>
     config.DisableNpgsqlLogging = true;
 }).UseLightweightSessions();
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.InitializeMartenWith<CatalogInitialData>();
+}
+
+builder.Services.AddExceptionHandler<CustomExceptionhandler>();
+
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipline.
 app.MapCarter();
+app.UseExceptionHandler(config => { });
 
 
 app.Run();
