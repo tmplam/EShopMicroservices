@@ -21,6 +21,6 @@ public class StoreBasketCommandHandler(IBasketRepository repository) : ICommandH
         ShoppingCart cart = command.Cart;
         await repository.StoreBasketAsync(cart, cancellationToken);
 
-        return new StoreBasketResult("tmplam");
+        return new StoreBasketResult(command.Cart.UserName);
     }
 }
