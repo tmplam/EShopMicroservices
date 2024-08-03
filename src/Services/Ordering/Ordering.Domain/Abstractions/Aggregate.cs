@@ -1,5 +1,5 @@
-﻿
-namespace Ordering.Domain.Abstractions;
+﻿namespace Ordering.Domain.Abstractions;
+
 
 public class Aggregate<TId> : Entity<TId>, IAggregate<TId>
 {
