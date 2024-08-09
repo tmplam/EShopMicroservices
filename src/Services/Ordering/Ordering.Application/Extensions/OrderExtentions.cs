@@ -5,7 +5,17 @@ public static class OrderExtentions
 {
     public static IEnumerable<OrderDto> ToOrderDtoList(this IEnumerable<Order> orders)
     {
-        return orders.Select(order => new OrderDto(
+        return orders.Select(DtoFromOrder);
+    }
+
+    public static OrderDto ToOrderDto(this Order order)
+    {
+        return DtoFromOrder(order);
+    }
+
+    private static OrderDto DtoFromOrder(Order order)
+    {
+        return new OrderDto(
             Id: order.Id.Value,
             CustomerId: order.CustomerId.Value,
             OrderName: order.OrderName.Value,
@@ -14,6 +24,6 @@ public static class OrderExtentions
             Payment: new PaymentDto(order.Payment.CardName!, order.Payment.CardNumber, order.Payment.Expiration, order.Payment.CVV, order.Payment.PaymentMethod),
             Status: order.Status,
             OrderItems: order.OrderItems.Select(oi => new OrderItemDto(oi.OrderId.Value, oi.ProductId.Value, oi.Quantity, oi.Price)).ToList()
-        ));
+        );
     }
 }
