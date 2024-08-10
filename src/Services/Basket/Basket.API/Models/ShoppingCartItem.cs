@@ -1,5 +1,6 @@
 ﻿namespace Basket.API.Models;
 
+
 public class ShoppingCartItem
 {
     public int Quantity { get; set; } = default!;

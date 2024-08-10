@@ -37,7 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingBlocks.Messaging", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{FE1F8B80-C2D0-470C-90C0-A4DC51BB62A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpApiGateway", "ApiGateways\YarpApiGateway\YarpApiGateway.csproj", "{96B6D8C4-2227-4C7A-8E48-D3C4B6DD9A83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YarpApiGateway", "ApiGateways\YarpApiGateway\YarpApiGateway.csproj", "{96B6D8C4-2227-4C7A-8E48-D3C4B6DD9A83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{64360CC8-85B9-4E53-B102-A608FE31BF8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Web", "WebApps\Shopping.Web\Shopping.Web.csproj", "{6755A2C2-4FE2-41FC-9B55-2FCD373AC66F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +93,10 @@ Global
 		{96B6D8C4-2227-4C7A-8E48-D3C4B6DD9A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96B6D8C4-2227-4C7A-8E48-D3C4B6DD9A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96B6D8C4-2227-4C7A-8E48-D3C4B6DD9A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6755A2C2-4FE2-41FC-9B55-2FCD373AC66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6755A2C2-4FE2-41FC-9B55-2FCD373AC66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6755A2C2-4FE2-41FC-9B55-2FCD373AC66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6755A2C2-4FE2-41FC-9B55-2FCD373AC66F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +116,7 @@ Global
 		{ECF2BDA6-B48C-4E26-A413-A2B3C7BC123E} = {DB3A8F1F-EC2E-4028-89E9-1B6A058B5022}
 		{0B182866-A192-47D7-841E-9DA27CE6B829} = {33DE7950-8CA2-4E27-B12E-7A003136AFAC}
 		{96B6D8C4-2227-4C7A-8E48-D3C4B6DD9A83} = {FE1F8B80-C2D0-470C-90C0-A4DC51BB62A1}
+		{6755A2C2-4FE2-41FC-9B55-2FCD373AC66F} = {64360CC8-85B9-4E53-B102-A608FE31BF8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD9A6882-8BA4-4FA2-9D3F-06FDF9931893}
